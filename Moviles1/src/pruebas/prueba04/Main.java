@@ -25,7 +25,7 @@ public class Main {
 			switch(opcion) {
 			
 			case 1:
-				g1.agregarTarea(sc);				
+								
 				break;
 			}
 			
