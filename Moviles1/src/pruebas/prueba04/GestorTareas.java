@@ -1,6 +1,9 @@
 package pruebas.prueba04;
 
 import java.util.Scanner;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -61,7 +64,7 @@ public class GestorTareas {
 		System.out.println("Dime la descripcion");
 		String desc = sc.nextLine();
 		
-		for (Tarea tarea : this.tareas) {
+		for (Tarea tarea: this.tareas) {
 
 			if (desc.equalsIgnoreCase(tarea.getDescripcion())) {
 				System.out.println(tarea + "\n");
@@ -92,6 +95,20 @@ public class GestorTareas {
 		for(Tarea tarea: this.tareas) {
 			System.out.println(tarea + "\n");
 		}
+	}
+	
+	public void meterFichero() {
+		try (PrintWriter pw = new PrintWriter(new FileWriter("tareas.txt"))) {
+
+			for(Tarea tarea: this.tareas) {
+				pw.println(tarea.toString());
+			}
+			System.out.println("Archivo creado con éxito.");
+
+		} catch (IOException e) {
+			System.out.println("Error al leer el archivo: " + e.getMessage());
+		}
+
 	}
 
 }

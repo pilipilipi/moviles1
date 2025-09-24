@@ -19,7 +19,8 @@ public class Main {
 					+ "4. Buscar una tarea por descripción.\n"
 					+ "5. Buscar una tarea por estado.\n"
 					+ "6. Mostrar todas las tareas.\n"
-					+ "7. Salir del programa");
+					+ "7. Meter las tareas en un fichero\n"
+					+ "8. Salir del programa");
 			opcion = Integer.parseInt(sc.nextLine());
 			
 			switch(opcion) {
@@ -49,6 +50,10 @@ public class Main {
 				break;
 				
 			case 7:
+				g1.meterFichero();
+				break;
+				
+			case 8:
 				System.out.println("Terminado");
 				break;
 				
@@ -57,7 +62,7 @@ public class Main {
 				break;
 			}
 			
-		} while(opcion != 7);
+		} while(opcion != 8);
 		
 		sc.close();
 		
